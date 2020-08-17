@@ -1,0 +1,7 @@
+{"Template": { 
+    "TemplateName": "USER_ORDER_ITEM_EMAIL",
+    "HtmlPart": "<h1>AWS Amazon Simple Email Service Test Email</h1><p>This email was sent with <a href=\"https://aws.amazon.com/ses/\">Amazon SES</a> using the <a href=\"https://aws.amazon.com/sdk-for-php/\">AWS SDK for PHP</a>.</p>",
+    "SubjectPart": "Thank you for placing your order with us",
+    "TextPart": "Your order for has been placed"
+  }
+}

@@ -1,0 +1,26 @@
+            
+            We have received an order. Your order number is # {{orderNumber}}, \n
+
+            Order Details: 
+
+            \n
+
+            Shipping Address: 
+
+            Name: {{ firstName}}</p>
+            Email: {{emailAddress}}
+            Phone: {{phoneNumber}}
+            Address: {{address}} 
+            
+             Items:
+             
+             Item    Quantity Price ea. Total Price 
+                \n
+                        {{#each items}}
+                            {{Name}} {{quantity}} {{price}} ea.  {{totalPrice}}
+                            
+                      {{/each}}
+            \n
+             Shipping and handling: Rs. {{deliveryFee}} 
+             Order Total: Rs. {{totalAmount}} 
+              payment Status: {{paymentStatus}}

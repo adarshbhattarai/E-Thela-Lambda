@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML email with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- use the font -->
+    <!-- <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+        }
+    </style> -->
+
+    <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+            body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+    <tr>
+        <td align="center" bgcolor="#78ab46" style="padding: 40px 0 30px 0;">
+            <h4> E-Thela Pvt Ltd. </h4>
+            <a href="www.e-thela.com" style="display: block;"> www.e-thela.com</a>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea" style="padding: 40px 30px 40px 30px;">
+
+            <p>We have received an order. Your order number is # {{orderNumber}},</p>
+
+            <h4> <strong><u> Order Details: </u> </strong> </h4>
+
+            <br />
+
+            <h4>Shipping Address: </h4>
+
+            <p> <b>Name: </b>{{ firstName}}</p>
+            <p> <b>Email: </b><span>{{emailAddress}} </span></p>
+            <p> <b>Phone: </b><span>{{phoneNumber}} </span></p>
+            <p> <b>Address </b><span>{{address}} </span></p>
+            <br />
+            <h4> Items:   </h4>
+            <table>
+                <thead>
+                <tr>
+                <th> Item </th>
+                <th> Quantity </th>
+                <th> Price ea. </th>
+                <th> Total Price </th>
+                </tr>
+                </thead>
+                <tbody>
+                        {{#each items}}
+                        <tr>
+                                <th scope="row">{{Name}}</th>
+                                <td>{{quantity}}</td>
+                                <td>{{price}} ea.</td>
+                                <td>{{totalPrice}}</td>
+                            </tr>
+                      {{/each}}
+                </tbody>
+            </table>
+            <br />
+            <table>
+                <tr>
+                    <th scope="row">Shipping and handling: </th>
+                    <td><strong style="color:red;">Rs. {{deliveryFee}} </strong></td>
+                </tr>
+                <tr>
+                        <th scope="row">Order Total: </th>
+                        <td> <strong style="color:red;">Rs. {{totalAmount}} </strong></td>
+                </tr>
+                <tr>
+                    <th scope="row">Status </th>
+                    <td> <strong style="color:red;">{{paymentStatus}} </strong></td>
+                </tr>
+            </table>
+            
+            <br />
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#777777" style="padding: 30px 30px 30px 30px;">
+            <p>
+                Regards, <br />
+                <em>E-Thela Pvt Ltd</em>  <br />
+                <em>Lalitpur, Nepal</em> <br />
+                <em>+977-9851081338</em>  <br />
+                <em>customer@e-thela.com</em>  <br />
+
+            </p>
+        </td>
+    </tr>
+</table>
+
+</body>
+
+</html>
